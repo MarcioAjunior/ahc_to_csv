@@ -52,12 +52,13 @@ def process_with_timeout(directory, timeout=60):
         process.join()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         print("Uso: ahc_to_csv precisa do diretório onde estão os arquivos .ahc")
     else:
-        # print(sys.argv[0], sys.argv[1])
         try:
+            
             directory = sys.argv[1]
+            
             process_with_timeout(directory, timeout=60)
         except Exception as e:
             print('Erro :', e)
